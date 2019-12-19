@@ -1,0 +1,13 @@
+<%- include('partials/header'); %>
+<div class="container">
+    <header class="jumbotron">
+        <%for(var i=0;i<orders.length;i++){%>
+               <h4>Order: <%=i%></h4>
+               <p><%=orders[i].name%></p>
+               <form action="/menu/orders/<%=orders[i]._id%>/?_method=DELETE" method="POST">
+                <button>Remove this order</button>
+                </form>
+        <%}%>
+    </header>
+</div>
+<%- include('partials/footer'); %>
